@@ -1,4 +1,6 @@
-ID,First Name,Last Name,Date of birth,Gender,Phone Number,Midterm,Final,GPA
+ID,First Name,Last Name,Date of birth,Gender,Phone Number,Midterm,Final,GPA
+
 172738,Nhung,Phan Thi Hong,18/03/1999,Female,84352261666,9.0,10.0,9.7
 172860,Trang,Thu Thu,19/12/1998,Female,23456789012,9.0,7.0,7.6
 172405,Duong,Doan Van,29/06/1999,Male,84123456781,9.0,8.0,8.299999999999999
+170001,Doan,Duong,29/06/1999,Male,11111111111,9.0,9.0,9.0

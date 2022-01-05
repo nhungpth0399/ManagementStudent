@@ -137,22 +137,26 @@ def view_students():
 
     input("Press any key to continue")
 
+def get_student_by_id (id):
+    data = pd.read_csv("students.csv")
+    x = data[data["ID"] == id]
+    check = x.to_numpy()
+    return check
+
 def update_student():
     global infor
     global student_database
 
     print("--- Update Student ---")
-    id = input("Enter ID to update: ")
-    index_student = None
-    updated_data = []
+    id = int(input("Enter ID to update: "))
     data = pd.read_csv("students.csv")
-    x = pd.DataFrame(data[data["ID"] == id])
-    check = x.values
-    updated_data = []
+    check = get_student_by_id(id)
+    print(check[0])
     counter = 0
 
-    if data[data["ID"]] != id:
-        updated_data.append(row)
+    if check[0] == [] :
+        print("Student doesn't exist")
+        # updated_data.append(row)
     else:
         print("1. Update First Name")
         print("2. Update Last Name")
@@ -163,26 +167,21 @@ def update_student():
         print("-------------------------")
         print("Choice: ")
         choice = int(input())
-        while choice != 1 and choice != 2 and choice != 3 and choice != 4 and choice != 5:
+        if choice != 1 and choice != 2 and choice != 3 and choice != 4 and choice != 5:
             print("Re-enter choice:")
             choice = int(input())
-        if choice  == 1:
-            print("New Name: ")
-            check[1] = Student.get_name()
+        elif choice  == 1:
+            check[0][1] = Student.get_fname()
         elif choice == 2:
-            print("New Date of birth: ")
-            check[2] = Student.get_dob()
+            check[0][2] = Student.get_dob()
         elif choice == 3:
-            print("New Gender: ")
-            check[3] = Student.get_gender()
+            check[0][3] = Student.get_gender()
         elif choice == 4:
-            print("New Midterm Score: ")
-            check[4] = Student.get_midterm()
+            check[0][4] = Student.get_midterm()
         elif choice == 5:
-            print("New Final Score: ")
-            check[5] = Student.get_final()
-        updated_data.append(check)
-
+            check[0][5] = Student.get_final()
+    #     updated_data.append(check)
+        print(check[0])
         # infor = ['ID', 'Name', 'Date of birth', 'Gender', 'Midterm', 'Final', 'GPA']
         # updated_data.append()
     

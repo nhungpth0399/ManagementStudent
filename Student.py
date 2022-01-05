@@ -19,7 +19,7 @@ def get_ID():
 
 def get_fname():
 
-    fna = input()
+    fna = input("First name: ")
     while True:
         if (fna.isalpha() == False):
             while True:
@@ -32,7 +32,7 @@ def get_fname():
 
 def get_lname():
 
-    lna = input()
+    lna = input("Last name: ")
     lname = lna.title()
     return lname
 
